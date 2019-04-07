@@ -30,10 +30,10 @@ public final class StreamUtil {
         StringBuilder sb = new StringBuilder();
 
         try {
-            BufferedReader reder = new BufferedReader(new InputStreamReader(is));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
             String line;
-            while ((line = reder.readLine()) != null){
+            while ((line = reader.readLine()) != null){
                 sb.append(line);
             }
         } catch (IOException e) {

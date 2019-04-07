@@ -62,8 +62,8 @@ public final class ClassUtil {
         Set<Class<?>> classSet = new HashSet<>();
 
         try {
-            Enumeration<URL> urls = getClassLoader().getResources(packageName.replaceAll(".", "/"));
-            String basePackagePath = packageName.replaceAll(".", "/");
+            String basePackagePath = packageName.replaceAll("\\.", "/");
+            Enumeration<URL> urls = getClassLoader().getResources(basePackagePath);
             while (urls.hasMoreElements()){
                 URL url = urls.nextElement();
                 if (url != null){
@@ -123,7 +123,7 @@ public final class ClassUtil {
     }
 
     private static void doAddClass(Set<Class<?>> classSet, String className){
-        Class<?> cls = loadClass(className, false);
+        Class<?> cls = loadClass(className, true);
         classSet.add(cls);
     }
 }

@@ -10,7 +10,7 @@ package com.nana;
 * @Version:        1.0
 */
 public interface ConfigConstant {
-    String CONFIG_FILE = "origin.yml";
+    String CONFIG_FILE = "nana.properties";
 
     String JDBC_DRIVER = "jdbcDriver";
     String JDBC_URL = "jdbcUrl";

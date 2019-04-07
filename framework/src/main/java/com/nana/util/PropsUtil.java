@@ -61,7 +61,9 @@ public final class PropsUtil {
     public static String getString(Properties properties, String key, String defaultValue){
         String value = defaultValue;
         if (properties.containsKey(key)){
-            value = properties.getProperty(key);
+            if (StringUtil.isNotEmpty(properties.getProperty(key))){
+                value = properties.getProperty(key);
+            }
         }
         return value;
     }

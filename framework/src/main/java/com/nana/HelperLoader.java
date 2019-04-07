@@ -1,9 +1,6 @@
 package com.nana;
 
-import com.nana.helper.BeanHelper;
-import com.nana.helper.ClassHelper;
-import com.nana.helper.ControllerHelper;
-import com.nana.helper.IocHelper;
+import com.nana.helper.*;
 import com.nana.util.ClassUtil;
 
 /**
@@ -17,16 +14,17 @@ import com.nana.util.ClassUtil;
 */
 public final class HelperLoader {
 
-    public static void init(){
-        Class<?>[] classes = {
-                ClassHelper.class,
-                BeanHelper.class,
-                IocHelper.class,
-                ControllerHelper.class
-        };
+        public static void init(){
+            Class<?>[] classes = {
+                    ClassHelper.class,
+                    BeanHelper.class,
+                    AopHelper.class,
+                    IocHelper.class,
+                    ControllerHelper.class
+            };
 
         for (Class<?> cls : classes) {
-            ClassUtil.loadClass(cls.getName(),false);
+            ClassUtil.loadClass(cls.getName(),true);
         }
     }
 }
